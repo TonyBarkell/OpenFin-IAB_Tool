@@ -1,0 +1,27 @@
+{
+  "name": "openfin-frameless_example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "hadouken-js-adapter": "^1.44.1",
+    "path": "^0.12.7",
+    "portfinder": "^1.0.25"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TonyBarkell/OpenFin-Frameless_Example.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TonyBarkell/OpenFin-Frameless_Example/issues"
+  },
+  "homepage": "https://github.com/TonyBarkell/OpenFin-Frameless_Example#readme"
+}
