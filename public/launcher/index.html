@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/launcher/css/main.css">
+        <script src="/launcher/scripts/main.js"></script>
+    </head>
+    <body>
+        <div id="titleFrame">
+            <div id="titleBar">
+                <p id='title'>OpenFin Support - IAB Example Launcher</p>
+                <img class="titleBarMinimize" onclick="minimizeWindow()" src="/launcher/shared/images/minimize.svg" alt="">
+                <img class="titleBarRestore" onclick="restoreWindow()" src="/launcher/shared/images/restore.svg" alt="">
+                <img class="titleBarMaximize" onclick="maximizeWindow()" src="/launcher/shared/images/maximize.svg" alt="">
+                <img class="titleBarClose" onclick="closeWindow()" src="/launcher/shared/images/close-x.svg" alt="">
+            </div>
+        </div>
+        
+        <div>
+            <div>
+                <div>
+                    <button id="startPublisher" onclick="startApp('/publisher/app.json')">Start New Publisher</button>
+                </div>
+                <div>
+                    <button id="startSubscriber" onclick="startApp('/subscriber/app.json')">Start New Subscriber</button> 
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

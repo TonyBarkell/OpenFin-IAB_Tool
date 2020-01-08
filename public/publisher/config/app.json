@@ -2,14 +2,13 @@
     "devtools_port": 9090,
     "startup_app": {
         "url": "",
-        "name": "OpenFin Preload Example",
-        "uuid": "OpenFinPreloadExample",
+        "name": "OpenFin IAB Publisher",
+        "uuid": "IAB-Publisher",
         "frame": false,
         "autoShow": true,
         "defaultWidth": 500,
         "defaultHeight": 500,
         "saveWindowState": false,
-        "opacity" : 0.5,
         "applicationIcon": "http://localhost:8080/favicon.ico",
         "waitForPageLoad" : false,
         "cornerRounding": {
@@ -18,7 +17,7 @@
         }
     },
     "runtime": {
-        "version": "12.69.43.22",
+        "version": "stable",
         "arguments" : ""
     },
     "shortcut": {

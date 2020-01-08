@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/publisher/css/main.css">
+        <script src="/publisher/scripts/main.js"></script>
+    </head>
+    <body>
+        <div id="titleFrame">
+            <div id="titleBar">
+                <p id="title">OpenFin Support - IAB Example Launcher</p>
+                <img class="titleBarMinimize" onclick="minimizeWindow()" src="/launcher/shared/images/minimize.svg" alt="">
+                <img class="titleBarRestore" onclick="restoreWindow()" src="/launcher/shared/images/restore.svg" alt="">
+                <img class="titleBarMaximize" onclick="maximizeWindow()" src="/launcher/shared/images/maximize.svg" alt="">
+                <img class="titleBarUndock" onclick="undockWindow()" src="/launcher/shared/images/undock.png" alt="">
+                <img class="titleBarClose" onclick="closeWindow()" src="/launcher/shared/images/close-x.svg" alt="">
+            </div>
+        </div>
+        
+        <div>
+            <div>
+                <input type="text" id="iabTopic" value="Send Topic">
+            </div>
+            <div>
+                <textarea id="iabMessage">IAB Message</textarea>
+            </div>
+            <div>
+                <button id="sendButton" onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </body>
+</html>

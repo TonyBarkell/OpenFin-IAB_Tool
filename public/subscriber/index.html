@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/subscriber/css/main.css">
+        <script src="/subscriber/scripts/main.js"></script>
+    </head>
+    <body>
+        <div id="titleFrame">
+            <div id="titleBar">
+                <p id="title">OpenFin Support - IAB Example Launcher</p>
+                <img class="titleBarMinimize" onclick="minimizeWindow()" src="/subscriber/shared/images/minimize.svg" alt="">
+                <img class="titleBarRestore" onclick="restoreWindow()" src="/subscriber/shared/images/restore.svg" alt="">
+                <img class="titleBarMaximize" onclick="maximizeWindow()" src="/subscriber/shared/images/maximize.svg" alt="">
+                <img class="titleBarUndock" onclick="undockWindow()" src="/subscriber/shared/images/undock.png" alt="">
+                <img class="titleBarClose" onclick="closeWindow()" src="/subscriber/shared/images/close-x.svg" alt="">
+            </div>
+        </div>
+        
+        <div>
+            <div>
+                <input type="text" id="iabUuid" value="Subcribe to messages from UUID (use * for all)">
+            </div>
+            <div>
+                <input type="text" id="iabTopic" value="Subscibe to topic">
+            </div>
+            <div>
+                <button id="subscribeButton" onclick="subscribe()">Subscribe</button>
+            </div>
+
+            <div>
+                <textarea id="iabMessage">IAB Message</textarea>
+            </div>
+
+        </div>
+    </body>
+</html>

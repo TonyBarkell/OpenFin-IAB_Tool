@@ -13,7 +13,7 @@ portfinder.getPortPromise().then((port) => {
     target = "http://localhost:" + port;
     app.listen(port, () =>{ 
         console.log("Server started at: " + target);
-        openfinLauncher.launch({manifestUrl: target + "/app.json?manifest=" + encodeURI(JSON.stringify(buildManifest()))});
+        openfinLauncher.launch({manifestUrl: target + "/app.json?manifest=" + encodeURI(JSON.stringify(buildManifest("/launcher")))});
     });
     console.log("Port: " + serverPort)
     
@@ -30,8 +30,32 @@ app.get('/app.json', (req, res) => {
     res.send(manifest);
 });
 
-app.get('/index.html', (req, res) => {
-    index = path.resolve("./public/app/index.html");
+app.get('/public/publisher/app.json', (req, res) => {
+    var manifest = buildManifest("/publisher");
+    var json = JSON.parse(manifest);
+    json .startup_app.uuid = json .startup_app.uuid + req.query.uuidMod;
+    console.log("Serving Manifest:");
+    console.log(json);
+    res.send(JSON.stringify(json));
+});
+
+app.get('/public/subscriber/app.json', (req, res) => {
+    var manifest = buildManifest("/subscriber");
+    var json = JSON.parse(manifest);
+    json .startup_app.uuid = json .startup_app.uuid + req.query.uuidMod;
+    console.log("Serving Manifest:");
+    console.log(json);
+    res.send(JSON.stringify(json));
+});
+
+app.get('/public/launcher/index.html', (req, res) => {
+    console.log("servicng publisher index");
+    index = path.resolve("./public/launcher/index.html");
+    res.sendFile(index);
+});
+
+app.get('/public/launcher/scripts/main.js', (req, res) => {
+    index = path.resolve("./public/launcher/scripts/main.css");
     res.sendFile(index);
 });
 
@@ -39,7 +63,6 @@ app.get('/child.html', (req, res) => {
     index = path.resolve("./public/app/child.html");
     res.sendFile(index);
 });
-
 
 app.get('/favicon.ico', (req, res) => {
     icon = path.resolve("./public/app/favicon.ico");
@@ -66,13 +89,13 @@ app.get('/restore.svg', (req, res) => {
     res.sendFile(icon);
 });
 
-function buildManifest(){
-    var manifest = require("./public/app/config/app.json");
+function buildManifest(appPath){
+    var manifest = require("./public" + appPath + "/config/app.json");
     manifest.startup_app.applicationIcon = target + "/favicon";
-    manifest.startup_app.url = target + "/index.html";
-    manifest.shortcut.icon = target + "/favicon";
-    manifest.startup_app.preloadScripts = [{url: target + "/preload.js"}];
+    manifest.startup_app.url = target + "/" + appPath + "/index.html";
     manifest.startup_app.customData = serverPort;
-    manifest.shortcut.icon = target = "/favicon"
+    manifest.shortcut.icon = target + "/favicon";
+    manifest.startup_app.customData = serverPort;
+    manifest.shortcut.icon = target + "/favicon"
     return JSON.stringify(manifest);
 };

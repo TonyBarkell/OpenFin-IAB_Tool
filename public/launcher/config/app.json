@@ -1,0 +1,30 @@
+{
+    "devtools_port": 9090,
+    "startup_app": {
+        "url": "",
+        "name": "OpenFin Preload Example",
+        "uuid": "OpenFinPreloadExample-Launcher",
+        "frame": false,
+        "autoShow": true,
+        "defaultWidth": 500,
+        "defaultHeight": 200,
+        "saveWindowState": false,
+        "applicationIcon": "http://localhost:8080/favicon.ico",
+        "waitForPageLoad" : false,
+        "cornerRounding": {
+            "height": 7,
+            "width": 7
+        }
+    },
+    "runtime": {
+        "version": "stable",
+        "arguments" : ""
+    },
+    "shortcut": {
+        "company": "OpenFin",
+        "description": "TestAppTemplate",
+        "icon": "http://cdn.openfin.co/hyperblotter/favicon.ico",
+        "name": "TestAppTemplate",
+        "target": ["desktop"]
+    }
+}
